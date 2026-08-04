@@ -1,0 +1,49 @@
+import React from 'react';
+import { Phone, MessageCircle, ShieldCheck } from 'lucide-react';
+
+export const ContactSection: React.FC = () => {
+  const whatsappNumber = '6200873964';
+  const openWhatsApp = () => {
+    window.open(`https://wa.me/91${whatsappNumber}?text=Hello%20MR%20Investment,%20I%20have%20a%20query%20regarding%20my%20coins`, '_blank');
+  };
+
+  return (
+    <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 max-w-2xl mx-auto space-y-6 shadow-xl">
+      <div className="text-center space-y-2">
+        <div className="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-400 mx-auto flex items-center justify-center border border-amber-500/30">
+          <Phone className="w-7 h-7" />
+        </div>
+        <h2 className="text-2xl font-black text-white">Contact & Support</h2>
+        <p className="text-xs text-slate-400">
+          24x7 Customer Helpdesk & Support Line
+        </p>
+      </div>
+
+      <div className="space-y-4 text-xs">
+        <div className="bg-slate-950 p-4 rounded-2xl border border-slate-800 flex items-center justify-between">
+          <div className="space-y-1">
+            <span className="text-slate-400 block text-[10px]">WhatsApp Support Number</span>
+            <span className="font-black text-amber-400 text-lg">+91 {whatsappNumber}</span>
+          </div>
+          <button
+            onClick={openWhatsApp}
+            className="px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs flex items-center space-x-1.5 transition-all cursor-pointer shadow-lg"
+          >
+            <MessageCircle className="w-4 h-4" />
+            <span>Chat on WhatsApp</span>
+          </button>
+        </div>
+
+        <div className="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
+          <div className="flex items-center space-x-2 text-slate-300">
+            <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <span className="font-bold">Official UPI & Deposit Verification:</span>
+          </div>
+          <p className="text-slate-400 text-[11px] leading-relaxed">
+            All investments, order verification, and withdrawal requests are managed directly via our dedicated line <strong className="text-amber-400">6200873964</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
