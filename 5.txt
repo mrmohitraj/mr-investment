@@ -1,0 +1,102 @@
+import React from 'react';
+import { UserProfile } from '../types';
+import { Coins, Wallet, ShieldCheck, LogOut, Phone } from 'lucide-react';
+
+interface HeaderProps {
+  user: UserProfile;
+  activeTab: 'home' | 'my-investments' | 'admin' | 'contact';
+  setActiveTab: (tab: 'home' | 'my-investments' | 'admin' | 'contact') => void;
+  onLogout: () => void;
+  investmentCount: number;
+}
+
+export const Header: React.FC<HeaderProps> = ({
+  user,
+  activeTab,
+  setActiveTab,
+  onLogout,
+  investmentCount,
+}) => {
+  return (
+    <header className="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+      <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+        <div
+          onClick={() => setActiveTab('home')}
+          className="flex items-center space-x-3 cursor-pointer group"
+        >
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-amber-400 text-slate-950 font-black flex items-center justify-center text-lg shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
+            MR
+          </div>
+          <div>
+            <span className="font-black text-white text-base tracking-tight block group-hover:text-amber-400 transition-colors">
+              MR INVESTMENT
+            </span>
+            <span className="text-[10px] text-emerald-400 font-bold flex items-center space-x-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span>User: {user.name}</span>
+            </span>
+          </div>
+        </div>
+
+        <div className="flex items-center space-x-1 sm:space-x-2">
+          <button
+            onClick={() => setActiveTab('home')}
+            className={`px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center space-x-1.5 ${
+              activeTab === 'home'
+                ? 'bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20'
+                : 'text-slate-300 hover:bg-slate-800'
+            }`}
+          >
+            <Coins className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">Coins</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('my-investments')}
+            className={`px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center space-x-1.5 ${
+              activeTab === 'my-investments'
+                ? 'bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20'
+                : 'text-slate-300 hover:bg-slate-800'
+            }`}
+          >
+            <Wallet className="w-3.5 h-3.5" />
+            <span>My Investment ({investmentCount})</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('admin')}
+            className={`px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center space-x-1.5 ${
+              activeTab === 'admin'
+                ? 'bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20'
+                : 'text-slate-300 hover:bg-slate-800'
+            }`}
+          >
+            <ShieldCheck className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">Admin (391139)</span>
+            <span className="sm:hidden">Admin</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('contact')}
+            className={`px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center space-x-1.5 ${
+              activeTab === 'contact'
+                ? 'bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20'
+                : 'text-slate-300 hover:bg-slate-800'
+            }`}
+          >
+            <Phone className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">Contact</span>
+          </button>
+
+          <button
+            onClick={onLogout}
+            className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-rose-400 transition-colors cursor-pointer ml-1"
+            title="Logout"
+          >
+            <LogOut className="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+};
