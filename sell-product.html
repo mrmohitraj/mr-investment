@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Sell Your Coins | Mr Coin Wala</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌾</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<div id="header-mount"></div>
+<main class="page-enter">
+  <div class="page-hero"><h1>📤 Sell Product</h1><p>List your coins (single piece or bulk) for buyers across India</p></div>
+
+  <div class="content-card" style="margin-top:0;">
+    <form id="sellForm" novalidate>
+
+      <label style="font-size:12.5px;font-weight:700;">Listing Type</label>
+      <div class="d-flex gap-8" style="margin:8px 0 16px;">
+        <label class="filter-pill active" style="flex:1;text-align:center;">
+          <input type="radio" name="mainCat" value="crop" checked style="display:none;"> 🪙 Coin
+        </label>
+        <label class="filter-pill" style="flex:1;text-align:center;">
+          <input type="radio" name="mainCat" value="waste" style="display:none;"> 🪙 Bulk Coins
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>Upload Images (up to 5)</label>
+        <label class="input-file" for="sellImages">
+          <div style="font-size:26px;">📷</div>
+          <div style="font-size:13px;font-weight:600;">Tap to upload product photos</div>
+          <div class="text-muted" style="font-size:11px;">JPG or PNG, clear daylight photos work best</div>
+        </label>
+        <input type="file" id="sellImages" accept="image/*" multiple style="display:none;">
+        <div class="img-preview-row" id="imgPreviewRow"></div>
+      </div>
+
+      <div class="form-group">
+        <label>Product Name</label>
+        <input type="text" class="form-control" id="sellName" placeholder="e.g. Sharbati Wheat, Paddy Husk">
+        <div class="error-msg">Please enter a product name.</div>
+      </div>
+
+      <div class="form-group">
+        <label>Category</label>
+        <select class="form-control" id="sellSubCategory"></select>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Quantity Available</label>
+          <input type="number" min="1" class="form-control" id="sellQuantity" placeholder="e.g. 100">
+          <div class="error-msg">Enter a valid quantity.</div>
+        </div>
+        <div class="form-group">
+          <label>Price (₹ per unit)</label>
+          <input type="number" min="1" class="form-control" id="sellPrice" placeholder="e.g. 2200">
+          <div class="error-msg">Enter a valid price.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Minimum Order Quantity (optional)</label>
+        <input type="number" min="1" class="form-control" id="sellMinOrder" placeholder="e.g. 5 (leave blank if no minimum)">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>District</label>
+          <input type="text" class="form-control" id="sellDistrict" placeholder="e.g. Ludhiana">
+          <div class="error-msg">Please enter your district.</div>
+        </div>
+        <div class="form-group">
+          <label>State</label>
+          <select class="form-control" id="sellState">
+            <option value="">Select State</option>
+            <option>Punjab</option><option>Haryana</option><option>Uttar Pradesh</option>
+            <option>Madhya Pradesh</option><option>Maharashtra</option><option>Rajasthan</option>
+            <option>Andhra Pradesh</option><option>Karnataka</option><option>Tamil Nadu</option>
+            <option>Bihar</option><option>Gujarat</option><option>West Bengal</option>
+          </select>
+          <div class="error-msg">Please select a state.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control" id="sellDescription" placeholder="Describe material, finish, size, packaging, etc."></textarea>
+        <div class="error-msg">Please add a description (min 10 characters).</div>
+      </div>
+
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" class="form-control" id="sellPhone" placeholder="10-digit mobile number" maxlength="10">
+        <div class="error-msg">Enter a valid 10-digit phone number.</div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Submit Listing</button>
+    </form>
+  </div>
+</main>
+<div id="footer-mount"></div>
+
+<script src="js/data.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/components.js"></script>
+<script>
+document.querySelectorAll('input[name="mainCat"]').forEach(r=>{
+  r.addEventListener('change', ()=>{
+    document.querySelectorAll('input[name="mainCat"]').forEach(x=>x.closest('label').classList.remove('active'));
+    r.closest('label').classList.add('active');
+  });
+});
+</script>
+<script src="js/sell-page.js"></script>
+</body>
+</html>

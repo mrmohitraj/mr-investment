@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Buyer Dashboard | Mr Coin Wala</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌾</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<div id="header-mount"></div>
+<main class="page-enter" id="buyerDashboardRoot">
+  <div class="page-hero"><h1>🧺 Buyer Dashboard</h1><p>Your purchases and saved products at a glance</p></div>
+
+  <div class="container" style="margin-top:0;">
+    <div class="stat-grid mb-16">
+      <div class="stat-card"><div class="stat-val" id="statOrdersB">0</div><div class="stat-lbl">Total Orders</div></div>
+      <div class="stat-card"><div class="stat-val" id="statWishlistB">0</div><div class="stat-lbl">Wishlisted</div></div>
+      <div class="stat-card"><div class="stat-val" id="statSpentB">₹0</div><div class="stat-lbl">Total Spent</div></div>
+      <div class="stat-card"><div class="stat-val" id="statCartB">0</div><div class="stat-lbl">In Cart</div></div>
+    </div>
+
+    <div class="content-card" style="margin:0 0 16px;">
+      <div class="d-flex justify-between align-center mb-16">
+        <h3 style="margin:0;font-size:15px;">Recent Orders</h3>
+        <a href="my-orders.html" class="see-all">See all →</a>
+      </div>
+      <div id="recentOrdersB"></div>
+    </div>
+  </div>
+</main>
+<div id="footer-mount"></div>
+
+<script src="js/data.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/components.js"></script>
+<script src="js/dashboard-page.js"></script>
+</body>
+</html>

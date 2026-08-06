@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Contact Us | Mr Coin Wala</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌾</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<div id="header-mount"></div>
+<main class="page-enter">
+  <div class="page-hero"><h1>✉️ Contact Us</h1><p>We usually respond within 24 hours</p></div>
+
+  <div class="content-card" style="margin-top:0;">
+    <div class="stat-grid mb-16" style="grid-template-columns:1fr;">
+      <div class="d-flex gap-8 align-center"><span style="font-size:20px;">📞</span><div><div style="font-weight:700;font-size:13.5px;">+91 62008 73964</div><div class="text-muted" style="font-size:11.5px;">Mohit Raj — Mon–Sat, 9am–7pm IST</div></div></div>
+    </div>
+    <div class="d-flex gap-8 align-center mb-16"><span style="font-size:20px;">📧</span><div><div style="font-weight:700;font-size:13.5px;">onlinemohit112@gmail.com</div><div class="text-muted" style="font-size:11.5px;">General enquiries &amp; support</div></div></div>
+    <div class="d-flex gap-8 align-center"><span style="font-size:20px;">📍</span><div><div style="font-weight:700;font-size:13.5px;">Mr Coin Wala Office</div><div class="text-muted" style="font-size:11.5px;">Court Area, Lakhisarai, Bihar, India</div></div></div>
+  </div>
+
+  <div class="content-card">
+    <h3 class="section-title">Send us a message</h3>
+    <form id="contactForm" novalidate>
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" class="form-control" id="cName" placeholder="Full name">
+        <div class="error-msg">Please enter your name.</div>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" class="form-control" id="cEmail" placeholder="you@example.com">
+        <div class="error-msg">Please enter a valid email address.</div>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea class="form-control" id="cMessage" placeholder="How can we help you?"></textarea>
+        <div class="error-msg">Message must be at least 10 characters.</div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+    </form>
+  </div>
+</main>
+<div id="footer-mount"></div>
+
+<script src="js/data.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/components.js"></script>
+<script src="js/contact-page.js"></script>
+</body>
+</html>
